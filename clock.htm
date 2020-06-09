@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#clock {
+      color:#ff0000;
+      text-align:center;
+     font-size:200px;
+     padding:200px 200px;
+     margin:150px 150px;
+     font-family:"Lucida Console",Courier,monoscape;
+     background-color:#333300
+}
+</style>
+</head>
+<body>
+<h1 style="font-size:300px;color:#0099ff;text-align:center;"> &#9200;DIGITAL CLOCK</h1>
+<div id="clock"></div>
+<script type="text/javascript">
+ setInterval(digiclock,500);
+function digiclock() {
+      var time=new Date();
+ var hour=time.getHours();
+ var min=time.getMinutes();
+ var sec=time.getSeconds();
+ if (hour>12)
+{
+ hour=hour-12;
+}
+if (hour==0)
+ {
+  hour=12;
+}
+if (hour<10)
+ {
+  hour="0"+ hour;
+}
+if (min<10)
+ {
+  min="0"+ min;
+}
+if (sec<10)
+ {
+  sec="0"+ sec;
+}
+ document.getElementById('clock').innerHTML= hour + ":" + min + ":" + sec;    
+}
+ 
+</script>
+</body>
+</html>
